@@ -33,6 +33,40 @@ body .container {
   padding: 15px 60px;
 }
 
+table {
+  display: table;
+  border-collapse: separate;
+  box-sizing: border-box;
+  text-indent: initial;
+  border-spacing: 2px;
+  border-color: gray;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body strong {
+  font-weight: 600;
+}
+
+body table tr {
+  color: #1d2136;
+  border-bottom: 1px solid #f6f6f6;
+}
+
+body table {
+  width: 100%;
+  font-size: .875rem;
+}
+
+body table td {
+  padding: 1rem 0.5rem;
+  vertical-align: middle;
+}
+
+
 .header-menu {
   position: sticky;
   top: 0;
@@ -1264,4 +1298,397 @@ svg:not(:root) {
 .nutritionSection img {
   width: 100%;
   object-fit: contain;
+}
+
+
+.footer_container {
+  display: block;
+}
+
+.footerNew__container {
+  padding: 4rem 8vw;
+}
+
+.footerNew__background__section5 {
+  background: #feffed;
+}
+
+.footerNew__container__heading {
+  font-family: cocosharp_xlextrabold_italic;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 46px;
+  line-height: 50px;
+  width: 80%;
+  color: #06543d;
+  margin-bottom: 1.5rem;
+}
+
+.footerNew__container__table {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.footerNew__container__table__element {
+  width: 347px;
+}
+
+.footerNew__container__table tr {
+  border: none !important;
+}
+
+.footerNew__container__table tr td {
+  font-family: CocoSharp XL;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 160%;
+  letter-spacing: -.02em;
+  color: #095933;
+}
+
+.footerNew__container__table tr td,
+.footerNew__container__table tr th {
+  padding: 0.2rem 0;
+}
+
+.footerNew__container__table__product {
+  text-align: left;
+}
+
+.footerNew__container__table__price {
+  text-align: inherit;
+}
+
+.ClientFooterContainer,
+.ClientFooterContainer .logo_social_block {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.ClientFooterContainer {
+  background: #095933 !important;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 53px 104px 42px;
+}
+
+.ClientFooterContainer .lower {
+  padding: 0;
+  width: unset;
+}
+
+.lower,
+.lower>div {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.ClientFooterContainer .lower div:not(:last-child) {
+  margin: 0;
+}
+
+.ClientFooterContainer .lower .list:not(:last-child) {
+  margin-right: 80px;
+}
+
+.ClientFooterContainer .lower div div {
+  margin-right: 0;
+}
+
+.ClientFooterContainer .lower .list>div {
+  margin-bottom: 38px;
+}
+
+.lower div .heading {
+  margin-top: 56px;
+  font-family: "CocoSharp XL";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28.8px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.ClientFooterContainer .lower .list div ul {
+  margin-top: 12px;
+  font-family: "CocoSharp XL";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 160%;
+  color: #e7e7e7;
+}
+
+.lower div li {
+  margin-bottom: 5px;
+  font-family: CocoSharp XL;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 22.8px;
+  color: #e7e7e7;
+  opacity: .7;
+}
+
+.list-item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+
+
+.ClientFooterContainer .lower .list>div:nth-child(2) {
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+
+.ClientFooterContainer .lower div:not(:last-child) {
+  margin: 0;
+}
+
+.ClientFooterContainer .contactUsIcons {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0;
+  max-width: 493px;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.contactUsIcons {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.ClientFooterContainer .logo_social_block {
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.ClientFooterContainer,
+.ClientFooterContainer .logo_social_block {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.contactUsIcons div {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  position: relative;
+  top: -4px;
+}
+
+.lazyload-wrapper {
+  width: inherit;
+  height: inherit;
+}
+
+.contactUsIcons a {
+  margin-right: 16px;
+}
+
+.contactUsIcons_section a svg {
+  width: 160px;
+  height: 50px;
+}
+
+.ClientFooterContainer .contactUsIcons .social_link_section {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  margin: 34px 0 31px;
+}
+
+.ClientFooterContainer .contactUsIcons .social_link_section span {
+  font-family: CocoSharp XL;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+  text-transform: capitalize;
+  color: hsla(0, 0%, 91%, .6);
+  margin-right: 19px;
+  box-sizing: border-box;
+  display: inline-block;
+  overflow: hidden;
+  width: initial;
+  height: initial;
+  background: none;
+  opacity: 1;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  max-width: 100%;
+}
+
+.contactUsIcons .social-icons img {
+  height: 30px;
+  width: 30px;
+}
+
+.ClientFooterContainer .contactUsIcons .signup_instant {
+  margin-bottom: 24px;
+}
+
+.ClientFooterContainer .contactUsIcons .signup_instant p {
+  font-family: CocoSharp XL;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 140%;
+  color: #fcfcec;
+}
+
+.ClientFooterContainer .contactUsIcons .signup_button {
+  background: #5dd37c;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.ClientFooterContainer .contactUsIcons .signup_button a {
+  font-family: "cocosharp_xlextrabold";
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 100%;
+  text-align: center;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: #feffed;
+  padding: 17px 74px;
+}
+
+.ClientFooterContainer .contactUsIcons .signup_titletext p {
+  font-family: "CocoSharp XL";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #fff;
+  opacity: .7;
+}
+
+.paymentContainer {
+  background: #095933;
+  padding: 29px 7vw 40px !important;
+}
+
+.paymentContainer {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background-color: #02262a;
+}
+
+.rightIconGroupWrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.paymentContainer .rightIconGroupWrapper p {
+  font-family: "CocoSharp XL";
+  font-weight: 700;
+  font-size: 11.0833px;
+  line-height: 160%;
+  color: #7da899;
+}
+
+.rightIconGroupWrapper p {
+  font-family: CocoSharp XL;
+  font-size: 10px;
+  margin-right: 16px;
+  color: gray;
+}
+
+.rightIconGroupWrapper>div {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.rightIconGroupWrapper>div>p {
+  margin-top: 8px;
+  margin-right: 0 !important;
+  margin-bottom: 0.5rem;
+  font-weight: 500 !important;
+}
+
+.paymentContainer .paymentIconGroup {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.paymentIconGroup {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0 16px;
+}
+
+.paymentContainer .paymentIconGroup .paymentGroup_title {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin-bottom: 8px;
+}
+
+.paymentContainer .paymentIconGroup .paymentGroup_title svg {
+  margin-right: 7px;
+}
+
+.paymentIconGroup div svg {
+  margin: 1px;
+}
+
+.paymentContainer .paymentIconGroup .paymentGroup_title p {
+  font-family: CocoSharp XL;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 160%;
+  color: #5dd37c;
 }
