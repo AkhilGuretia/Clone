@@ -1,10 +1,11 @@
-export const Header = () => {
+/* eslint-disable react/prop-types */
+export const Header = ({ handleShowCart }) => {
     return (
         <header className='header-menu' >
             <nav className='nav-menu' id='header' >
                 <div className='placeholder-nav-main' >
 
-                    <TopNavigation />
+                    <TopNavigation handleShowCart={handleShowCart} />
 
                 </div>
 
@@ -14,7 +15,7 @@ export const Header = () => {
     );
 }
 
-const TopNavigation = () => {
+const TopNavigation = ({ handleShowCart }) => {
     return (
         <>
             <div className='nav-menu-left' >
@@ -71,7 +72,7 @@ const TopNavigation = () => {
                     </a>
                     </li>
 
-                    <li className="plixlife-main-menu__icon main-menu__cart" >
+                    <li onClick={handleShowCart} className="plixlife-main-menu__icon main-menu__cart" >
                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8.9375 21.9375C9.38623 21.9375 9.75 21.5737 9.75 21.125C9.75 20.6763 9.38623 20.3125 8.9375 20.3125C8.48877 20.3125 8.125 20.6763 8.125 21.125C8.125 21.5737 8.48877 21.9375 8.9375 21.9375Z" stroke="#FCFCEC" strokeWidth="1.68304" strokeLinecap="round" strokeLinejoin="round"></path>
                             <path d="M20.3125 21.9375C20.7612 21.9375 21.125 21.5737 21.125 21.125C21.125 20.6763 20.7612 20.3125 20.3125 20.3125C19.8638 20.3125 19.5 20.6763 19.5 21.125C19.5 21.5737 19.8638 21.9375 20.3125 21.9375Z" stroke="#FCFCEC" strokeWidth="1.68304" strokeLinecap="round" strokeLinejoin="round"></path>

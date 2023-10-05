@@ -4,6 +4,12 @@ import ShoppingArea from "./ShoppingArea.jsx";
 
 const ImageSliderData = [
   {
+    url: "https://images.plixlife.com/banners/e86c91b241744f60b5a7dfa88f802809.png?auto=format&fit=max&w=1200"
+  },
+  {
+    url: "https://images.plixlife.com/banners/8f83fd7452c14424b0dd680dcb5f71ad.jpg?auto=format&fit=max&w=1200"
+  },
+  {
     url:
       "https://images.plixlife.com/banners/2deb5e6c13944994ac23259e8aeaf8ec.jpg?auto=format&fit=max&w=1200"
   },

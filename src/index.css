@@ -66,6 +66,28 @@ body table td {
   vertical-align: middle;
 }
 
+.modal-dialog {
+  padding: 8px;
+  background-color: #5DD37C;
+  position: fixed;
+  overflow-y: scroll;
+  display: block;
+  top: 0;
+  bottom: 0;
+  right: -216px;
+  height: vh;
+  width: 200px;
+  transition: opacity 2500ms linear, right 2500ms ease-in-out;
+}
+
+.modal-dialog.show {
+  right: 0px;
+  transition: opacity 2500ms linear, right 2500ms ease-in-out;
+  width: 31.8%;
+  z-index: 100 !important;
+}
+
+
 
 .header-menu {
   position: sticky;
@@ -645,6 +667,7 @@ svg:not(:root) {
   width: 100%;
   opacity: 0.95;
   border-radius: 0%;
+  height: 360px;
 }
 
 .slideshow {
