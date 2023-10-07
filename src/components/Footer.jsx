@@ -2,8 +2,6 @@ export const Footer = () => {
     return (
         <div className="footer_container">
 
-            <AboutSection />
-
             <ClientFooterContainer />
 
             <FooterPaymentContainer />
@@ -12,47 +10,6 @@ export const Footer = () => {
     );
 }
 
-const AboutSection = () => {
-    return (
-        <div className="footerNew__container footerNew__background__section5">
-            <div className="footerNew__container__heading">Plix Products Price List in India</div>
-            <div className="footerNew__container__table">
-                <table className="footerNew__container__table__element">
-                    <tr>
-                        <td className="footerNew__container__table__product"><strong>Products List</strong></td>
-                        <td className="footerNew__container__table__price"><strong>Price</strong></td>
-                    </tr>
-                    <tr>
-                        <td className="footerNew__container__table__product"><a href="https://www.plixlife.com/product/worlds-first-apple-cider-vinegar-effervescent-for-weight-management-bloating-and-energy/3" > ACV Fizzies </a></td>
-                        <td className="footerNew__container__table__price">Rs 1199</td>
-                    </tr>
-                    <tr>
-                        <td className="footerNew__container__table__product"><a href="https://www.plixlife.com/product/skin-glow/44" >Glowy Skin Fizzies</a></td>
-                        <td className="footerNew__container__table__price">Rs 849</td>
-                    </tr>
-                    <tr>
-                        <td className="footerNew__container__table__product"><a href="https://www.plixlife.com/product/pineappleserum/344"> Pineapple Depigmentation Serum</a></td>
-                        <td className="footerNew__container__table__price">Rs 549</td>
-                    </tr>
-                    <tr>
-                        <td className="footerNew__container__table__product"><a href="https://www.plixlife.com/product/whole-food-collagen-builder/4" >
-                            Collagen Booster </a></td>
-                        <td className="footerNew__container__table__price">Rs 849</td>
-                    </tr>
-                    <tr>
-                        <td className="footerNew__container__table__product"><a href="https://www.plixlife.com/product/ashwa/48" > Ashwa Calm</a></td>
-                        <td className="footerNew__container__table__price">Rs 1199</td>
-                    </tr>
-                    <tr>
-                        <td className="footerNew__container__table__product"><a href="https://www.plixlife.com/product/deep-sleep/282" > Deep Sleep </a></td>
-                        <td className="footerNew__container__table__price">Rs 550</td>
-                    </tr>
-                </table>
-            </div>
-            <div className="footerNew__container__text"><strong>Price list stands updated as on 19 Mar, 2023</strong></div>
-        </div>
-    );
-}
 
 const ClientFooterContainer = () => {
 

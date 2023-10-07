@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Header } from "./components/Header.jsx";
-import { MainHomePage } from "./components/MainHomepage.jsx";
+import { MainHomePage } from "./pages/MainHomepage.jsx";
 import { Footer } from "./components/Footer.jsx";
 import { CartOverLay } from "./components/CartOverlay.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
