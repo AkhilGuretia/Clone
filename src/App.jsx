@@ -1,35 +1,37 @@
 /* eslint-disable react/prop-types */
-import { Header } from "./components/Header.jsx";
 import { MainHomePage } from "./pages/MainHomepage.jsx";
+import { Header } from "./components/Header.jsx";
 import { Footer } from "./components/Footer.jsx";
+import Checkout from "./pages/Checkout.jsx";
 import { CartOverLay } from "./components/CartOverlay.jsx";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
 const App = () => {
-
   const [showCart, setShowCart] = useState(false);
 
   const handleShowCart = () => {
-    setShowCart((status) => (!status));
-  }
+    setShowCart((status) => !status);
+  };
 
   return (
     <div>
-      <div className='App' >
+      <div className="App">
         <Header handleShowCart={handleShowCart} />
 
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<MainHomePage />} />
+        <Routes>
+          <Route
+            path="/"
+            element={<MainHomePage handleShowCart={handleShowCart} />}
+          />
+          <Route path="/checkout" element={<Checkout />} />
+        </Routes>
 
-          </Routes>
-        </BrowserRouter>
         <Footer />
       </div>
       {showCart && <CartOverLay setShowCart={setShowCart} />}
     </div>
-  )
-}
+  );
+};
 
 export default App;
