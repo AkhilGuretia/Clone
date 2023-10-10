@@ -4075,3 +4075,65 @@ option {
   font-size: 18px;
   font-weight: 500;
 }
+
+.headerNav,
+.top {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.headerNav {
+  min-height: 64px;
+}
+
+.headerNavPlix {
+  min-height: 48px !important;
+}
+
+.plixlife-main-menu {
+  -ms-flex-align: center;
+  align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+
+.plixlife-main-menu__lower {
+  display: grid;
+  width: 100vw;
+  padding: 0 3vw;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 48px;
+  height: 74px;
+  background-color: #5dd37c;
+  grid-template-columns: 1fr 1fr;
+}
+
+.plixlife-main-menu__lower__desktop-left {
+  grid-gap: 1.5rem;
+  gap: 1.5rem;
+}
+
+.plixlife-main-menu__lower__desktop-left {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: start;
+  justify-content: start;
+  grid-gap: 2rem;
+  gap: 2rem;
+  height: 100%;
+}
+
+.plixlife-main-menu__lower__desktop-left a {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}

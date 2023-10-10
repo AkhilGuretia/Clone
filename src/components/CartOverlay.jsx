@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
-export const CartOverLay = ({ setShowCart }) => {
+export const CartOverLay = ({ setShowCart, setIsAppOnHomePage }) => {
   return (
     <div className="overlayFarzicom overlayFarzicom--plixlifefcCart">
       <div className="overlayFarzicom__right">
@@ -233,7 +233,10 @@ export const CartOverLay = ({ setShowCart }) => {
                 </div>
               </div>
               <div className="cart-plix__footer__button">
-                <NavLink to="/checkout">
+                <NavLink
+                  to="/checkout"
+                  onClick={() => setIsAppOnHomePage(false)}
+                >
                   <button onClick={() => setShowCart(false)}>
                     <span>Proceed to Pay</span>
                   </button>

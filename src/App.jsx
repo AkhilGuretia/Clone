@@ -9,6 +9,7 @@ import { useState } from "react";
 
 const App = () => {
   const [showCart, setShowCart] = useState(false);
+  const [isAppOnHomePage, setIsAppOnHomePage] = useState(true);
 
   const handleShowCart = () => {
     setShowCart((status) => !status);
@@ -17,19 +18,27 @@ const App = () => {
   return (
     <div>
       <div className="App">
-        <Header handleShowCart={handleShowCart} />
+        {isAppOnHomePage && <Header handleShowCart={handleShowCart} />}
 
         <Routes>
           <Route
             path="/"
             element={<MainHomePage handleShowCart={handleShowCart} />}
           />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route
+            path="/checkout"
+            element={<Checkout setIsAppOnHomePage={setIsAppOnHomePage} />}
+          />
         </Routes>
 
         <Footer />
       </div>
-      {showCart && <CartOverLay setShowCart={setShowCart} />}
+      {showCart && (
+        <CartOverLay
+          setShowCart={setShowCart}
+          setIsAppOnHomePage={setIsAppOnHomePage}
+        />
+      )}
     </div>
   );
 };
