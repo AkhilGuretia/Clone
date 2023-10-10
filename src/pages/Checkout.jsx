@@ -1,7 +1,8 @@
 import { NavLink } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
-const Checkout = ({ setIsAppOnHomePage }) => {
+const Checkout = ({ setIsAppOnHomePage, cartItems }) => {
+  const checkoutItems = cartItems;
   return (
     <>
       <header className="headerNav false headerNavPlix">
@@ -666,48 +667,49 @@ const Checkout = ({ setIsAppOnHomePage }) => {
                     <hr className="CheckoutV3_hr__lAMl4 " />
                   </div>
                   <div className="CheckoutV3_showHrmobile__nPqgV"></div>
-                  <div>
-                    <div className="CheckoutV3_ordersummerydesktop__vNT67">
-                      <div className="CheckoutV3_orderSummaryProductList__jpYpI">
-                        <div className="CheckoutV3_orderSummaryProduct__LtteP">
-                          <div className="CheckoutV3_orderSummaryProductImage__aUr53">
-                            <span>
-                              <img
-                                alt="Product Image"
-                                src="https://images.plixlife.com/products/92-9de5d8ebb32e43aab82569f2601be903.jpg?auto=format&amp;fit=max&amp;w=320"
-                                decoding="async"
-                                data-nimg="intrinsic"
-                              />
-                            </span>
-                          </div>
-                          <div className="CheckoutV3_orderSummaryProductContent__O4ZTv">
-                            <div className="CheckoutV3_orderSummaryProductContentName__gS9yY">
-                              Fit &amp; Slim Plant Protein Shake with 12G
-                              Protein, 5.2G Fiber, 6 Fruits &amp; Veggies
+                  {checkoutItems.map((item) => (
+                    <div key={item.id}>
+                      <div className="CheckoutV3_ordersummerydesktop__vNT67">
+                        <div className="CheckoutV3_orderSummaryProductList__jpYpI">
+                          <div className="CheckoutV3_orderSummaryProduct__LtteP">
+                            <div className="CheckoutV3_orderSummaryProductImage__aUr53">
+                              <span>
+                                <img
+                                  alt="Product Image"
+                                  src={item.image}
+                                  decoding="async"
+                                  data-nimg="intrinsic"
+                                />
+                              </span>
                             </div>
-                            <div className="CheckoutV3_orderSummaryProductContentPriceContainer__03Dtf">
-                              <div className="CheckoutV3_undiscounted__2FNIK">
-                                <span>₹1,500.00</span>
+                            <div className="CheckoutV3_orderSummaryProductContent__O4ZTv">
+                              <div className="CheckoutV3_orderSummaryProductContentName__gS9yY">
+                                {item.name}
                               </div>
-                              <div className="CheckoutV3_discounted__HoflW">
-                                <span>₹849.00</span>
+                              <div className="CheckoutV3_orderSummaryProductContentPriceContainer__03Dtf">
+                                <div className="CheckoutV3_undiscounted__2FNIK">
+                                  <span>{item.originalPrice}</span>
+                                </div>
+                                <div className="CheckoutV3_discounted__HoflW">
+                                  <span>{item.specialPrice}</span>
+                                </div>
+                                <div className="CheckoutV3_discount__iiyld">
+                                  {item.discount}
+                                </div>
                               </div>
-                              <div className="CheckoutV3_discount__iiyld">
-                                43% Off.
+                              <div className="CheckoutV3_quantity__KoSHV">
+                                {" "}
+                                Quantity: 1{" "}
                               </div>
                             </div>
-                            <div className="CheckoutV3_quantity__KoSHV">
-                              {" "}
-                              Quantity: 1{" "}
+                            <div className="CheckoutV3_discounted__HoflW">
+                              <span>{item.specialPrice}</span>
                             </div>
-                          </div>
-                          <div className="CheckoutV3_discounted__HoflW">
-                            <span>₹849.00</span>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
                 <div className="CheckoutV3_paymentSummaryContainerWrapper__vv7SQ">
                   <div className="CheckoutV3_paymentSummaryContainer__F7y09">

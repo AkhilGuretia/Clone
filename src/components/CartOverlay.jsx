@@ -1,7 +1,12 @@
 import { NavLink } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
-export const CartOverLay = ({ setShowCart, setIsAppOnHomePage }) => {
+export const CartOverLay = ({
+  setShowCart,
+  setIsAppOnHomePage,
+  cartItems,
+  handleRemoveItem,
+}) => {
   return (
     <div className="overlayFarzicom overlayFarzicom--plixlifefcCart">
       <div className="overlayFarzicom__right">
@@ -39,96 +44,109 @@ export const CartOverLay = ({ setShowCart, setIsAppOnHomePage }) => {
             <div className="cart-plix__info">
               <div className="popup_wrapper_box"></div>
               <div className="sc-bGZrDQ KZpUv">
-                <div data-test="cartRow" className="sc-hgkeyV jbOjdq">
-                  <div className="sc-dHThnQ icVOSq">
-                    <div className="sc-ijbeYI kkXsRg">
-                      <img
-                        width="80"
-                        height="80"
-                        src="https://images.plixlife.com/products/3-2301363fe774467ebec681a126bcc480.jpg?auto=format&amp;sharp=20&amp;ixlib=react-9.3.0&amp;h=80&amp;w=80"
-                      />
-                    </div>
-                    <div className="sc-iQkRNw kcKpjl">
-                      <div>
-                        <p className="sc-hxTMRp hQCcye">
-                          Apple Cider Vinegar Effervescent with mother for
-                          weight loss{" "}
-                        </p>
-                        <div className="sc-hnKQEj hfjgMI">pack of 4 tubes</div>
+                {cartItems.length > 0 &&
+                  cartItems.map((item) => (
+                    <div
+                      data-test="cartRow"
+                      className="sc-hgkeyV jbOjdq"
+                      key={item.id}
+                    >
+                      <div className="sc-dHThnQ icVOSq">
+                        <div className="sc-ijbeYI kkXsRg">
+                          <img width="80" height="80" src={item.image} />
+                        </div>
+                        <div className="sc-iQkRNw kcKpjl">
+                          <div>
+                            <p className="sc-hxTMRp hQCcye">{item.name}</p>
+                            <div className="sc-hnKQEj hfjgMI">
+                              {item.quantity}
+                            </div>
+                          </div>
+                          <p></p>
+                        </div>
+                        <span
+                          className="sc-bRrYFZ hFWJbD"
+                          onClick={() => handleRemoveItem(item.id)}
+                        >
+                          <svg
+                            width="13"
+                            height="14"
+                            viewBox="0 0 13 14"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M11.8125 2.1875H9.54297L8.61328 0.65625C8.39453 0.300781 7.90234 0 7.49219 0H4.73047C4.32031 0 3.82812 0.300781 3.60938 0.65625L2.67969 2.1875H0.4375C0.191406 2.1875 0 2.40625 0 2.625V3.0625C0 3.30859 0.191406 3.5 0.4375 3.5H0.875L1.44922 12.7695C1.47656 13.4531 2.07812 14 2.76172 14H9.46094C10.1445 14 10.7461 13.4531 10.7734 12.7695L11.375 3.5H11.8125C12.0312 3.5 12.25 3.30859 12.25 3.0625V2.625C12.25 2.40625 12.0312 2.1875 11.8125 2.1875ZM4.73047 1.3125H7.49219L8.01172 2.1875H4.21094L4.73047 1.3125ZM9.46094 12.6875H2.76172L2.1875 3.5H10.0352L9.46094 12.6875Z"
+                              fill="#AAAAAA"
+                            ></path>
+                          </svg>
+                        </span>
                       </div>
-                      <p></p>
-                    </div>
-                    <span className="sc-bRrYFZ hFWJbD">
-                      <svg
-                        width="13"
-                        height="14"
-                        viewBox="0 0 13 14"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M11.8125 2.1875H9.54297L8.61328 0.65625C8.39453 0.300781 7.90234 0 7.49219 0H4.73047C4.32031 0 3.82812 0.300781 3.60938 0.65625L2.67969 2.1875H0.4375C0.191406 2.1875 0 2.40625 0 2.625V3.0625C0 3.30859 0.191406 3.5 0.4375 3.5H0.875L1.44922 12.7695C1.47656 13.4531 2.07812 14 2.76172 14H9.46094C10.1445 14 10.7461 13.4531 10.7734 12.7695L11.375 3.5H11.8125C12.0312 3.5 12.25 3.30859 12.25 3.0625V2.625C12.25 2.40625 12.0312 2.1875 11.8125 2.1875ZM4.73047 1.3125H7.49219L8.01172 2.1875H4.21094L4.73047 1.3125ZM9.46094 12.6875H2.76172L2.1875 3.5H10.0352L9.46094 12.6875Z"
-                          fill="#AAAAAA"
-                        ></path>
-                      </svg>
-                    </span>
-                  </div>
-                  <div className="sc-hmkDWj ipZKxN">
-                    <div className="plixlife__QuntityField__div sc-NGAnU jxkCzA">
-                      <div className="sc-exAgwC ASfQV">
-                        <div className="sc-gqPbQI eoixQf">
-                          <span className="sc-hORach dOAjLC">
-                            <div className="sc-ellAub iVaTsP">
-                              <div>
-                                <svg height="10" viewBox="0 0 32 32" width="10">
-                                  <path
-                                    d="M0 13.818h32v4.364h-32v-4.364z"
-                                    fill="#444444"
-                                  ></path>
-                                </svg>
+                      <div className="sc-hmkDWj ipZKxN">
+                        <div className="plixlife__QuntityField__div sc-NGAnU jxkCzA">
+                          <div className="sc-exAgwC ASfQV">
+                            <div className="sc-gqPbQI eoixQf">
+                              <span className="sc-hORach dOAjLC">
+                                <div className="sc-ellAub iVaTsP">
+                                  <div>
+                                    <svg
+                                      height="10"
+                                      viewBox="0 0 32 32"
+                                      width="10"
+                                    >
+                                      <path
+                                        d="M0 13.818h32v4.364h-32v-4.364z"
+                                        fill="#444444"
+                                      ></path>
+                                    </svg>
+                                  </div>
+                                </div>
+                              </span>
+                              <div className="sc-bMVAic leyXbG">
+                                <input
+                                  name="quantity"
+                                  className="sc-ctDIWD klXQeF sc-bAeIUo fOjzft"
+                                  value="1"
+                                />
+                              </div>
+                              <span className="sc-hORach dOAjLC">
+                                <div className="sc-henqWA iOIcOy">
+                                  <div>
+                                    <svg
+                                      height="10"
+                                      viewBox="0 0 32 32"
+                                      width="10"
+                                    >
+                                      <path
+                                        d="M18 14v-12c0-1.104-0.896-2-2-2s-2 0.896-2 2v12h-12c-1.104 0-2 0.896-2 2s0.896 2 2 2h12v12c0 1.104 0.896 2 2 2s2-0.896 2-2v-12h12c1.104 0 2-0.896 2-2s-0.896-2-2-2h-12z"
+                                        fill="#21125E"
+                                      ></path>
+                                    </svg>
+                                  </div>
+                                </div>
+                              </span>
+                            </div>
+                            <div className="sc-gojNiO lbqugr"></div>
+                          </div>
+                        </div>
+                        <div className="upsell-price-wrapper sc-csJRnm kyNnUq">
+                          <div>
+                            <div className="sc-cvbbAY cRuOWk">
+                              <span className="sc-kEYyzF JGMgo">
+                                <span>{item.originalPrice}</span>
+                              </span>
+                              <div className="sc-brqgnP jCBOdm">
+                                <span>{item.specialPrice}</span>
                               </div>
                             </div>
-                          </span>
-                          <div className="sc-bMVAic leyXbG">
-                            <input
-                              name="quantity"
-                              className="sc-ctDIWD klXQeF sc-bAeIUo fOjzft"
-                              value="1"
-                            />
-                          </div>
-                          <span className="sc-hORach dOAjLC">
-                            <div className="sc-henqWA iOIcOy">
-                              <div>
-                                <svg height="10" viewBox="0 0 32 32" width="10">
-                                  <path
-                                    d="M18 14v-12c0-1.104-0.896-2-2-2s-2 0.896-2 2v12h-12c-1.104 0-2 0.896-2 2s0.896 2 2 2h12v12c0 1.104 0.896 2 2 2s2-0.896 2-2v-12h12c1.104 0 2-0.896 2-2s-0.896-2-2-2h-12z"
-                                    fill="#21125E"
-                                  ></path>
-                                </svg>
-                              </div>
+                            <div className="sc-cMljjf bDaOyf">
+                              <button>{item.discount}</button>
                             </div>
-                          </span>
-                        </div>
-                        <div className="sc-gojNiO lbqugr"></div>
-                      </div>
-                    </div>
-                    <div className="upsell-price-wrapper sc-csJRnm kyNnUq">
-                      <div>
-                        <div className="sc-cvbbAY cRuOWk">
-                          <span className="sc-kEYyzF JGMgo">
-                            <span>₹1,400</span>
-                          </span>
-                          <div className="sc-brqgnP jCBOdm">
-                            <span>₹1,249</span>
                           </div>
                         </div>
-                        <div className="sc-cMljjf bDaOyf">
-                          <button>11% OFF</button>
-                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  ))}
               </div>
               <div className="monthlypackoffer">
                 <div className="threemonth_pack">

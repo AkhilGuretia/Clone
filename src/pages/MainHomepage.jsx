@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect, useRef } from "react";
 import ShoppingArea from "../components/ShoppingArea.jsx";
 
@@ -33,7 +34,8 @@ const ImageSliderData = [
 
 const delay = 2500;
 
-export const MainHomePage = () => {
+// eslint-disable-next-line react/prop-types
+export const MainHomePage = ({ shopCategory, handleAddCartItem }) => {
   return (
     <>
       <div className="hompage_container">
@@ -45,7 +47,10 @@ export const MainHomePage = () => {
 
         <PledgeTreeContainer />
 
-        <ShoppingArea />
+        <ShoppingArea
+          shopCategory={shopCategory}
+          handleAddCartItem={handleAddCartItem}
+        />
 
         <NutritionSectionContainer />
 
