@@ -2529,6 +2529,7 @@ svg:not(:root) {
   display: flex;
   -webkit-box-align: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .iVaTsP {

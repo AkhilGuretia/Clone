@@ -23,6 +23,7 @@ const shopCategory = [
         originalPrice: "₹1,400",
         specialPrice: "₹1,249",
         discount: "-11%",
+        orderedQuantity: 1,
       },
 
       {
@@ -35,6 +36,7 @@ const shopCategory = [
         originalPrice: "₹1,600",
         specialPrice: "₹1,299",
         discount: "-19%",
+        orderedQuantity: 1,
       },
 
       {
@@ -47,6 +49,7 @@ const shopCategory = [
         originalPrice: "₹1,400",
         specialPrice: "₹1,249",
         discount: "-11%",
+        orderedQuantity: 1,
       },
     ],
   },
@@ -66,6 +69,7 @@ const shopCategory = [
         originalPrice: "₹1,400",
         specialPrice: "₹1,249",
         discount: "-11%",
+        orderedQuantity: 1,
       },
 
       {
@@ -78,6 +82,7 @@ const shopCategory = [
         originalPrice: "₹1,400",
         specialPrice: "₹1,249",
         discount: "-11%",
+        orderedQuantity: 1,
       },
 
       {
@@ -90,6 +95,7 @@ const shopCategory = [
         originalPrice: "₹2,499",
         specialPrice: "₹1,800",
         discount: "-28%",
+        orderedQuantity: 1,
       },
     ],
   },
@@ -109,6 +115,7 @@ const shopCategory = [
         originalPrice: "₹1,199",
         specialPrice: "₹899",
         discount: "-26%",
+        orderedQuantity: 1,
       },
 
       {
@@ -121,6 +128,7 @@ const shopCategory = [
         originalPrice: "₹1,400",
         specialPrice: "₹1,249",
         discount: "-11%",
+        orderedQuantity: 1,
       },
 
       {
@@ -133,6 +141,7 @@ const shopCategory = [
         originalPrice: "₹999",
         specialPrice: "₹699",
         discount: "-28%",
+        orderedQuantity: 1,
       },
     ],
   },
@@ -152,6 +161,7 @@ const shopCategory = [
         originalPrice: "₹850",
         specialPrice: "₹849",
         discount: "-1%",
+        orderedQuantity: 1,
       },
 
       {
@@ -164,6 +174,7 @@ const shopCategory = [
         originalPrice: "₹575",
         specialPrice: "₹549",
         discount: "-5%",
+        orderedQuantity: 1,
       },
 
       {
@@ -176,6 +187,7 @@ const shopCategory = [
         originalPrice: "₹1075",
         specialPrice: "₹699",
         discount: "-35%",
+        orderedQuantity: 1,
       },
     ],
   },
@@ -199,6 +211,14 @@ const App = () => {
     setCartItems((cartItems) => cartItems.filter((item) => item.id !== id));
   };
 
+  const handleUpdateItemQuantity = (id, ItemQuantity) => {
+    setCartItems((cartItems) => {
+      cartItems.map((item) =>
+        item.id === id ? { ...item, orderedQuantity: ItemQuantity } : item
+      );
+    });
+  };
+
   return (
     <div>
       <div className="App">
@@ -210,6 +230,7 @@ const App = () => {
             setIsAppOnHomePage={setIsAppOnHomePage}
             cartItems={cartItems}
             handleRemoveItem={handleRemoveItem}
+            handleUpdateItemQuantity={handleUpdateItemQuantity}
           />
         )}
 

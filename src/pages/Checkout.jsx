@@ -699,7 +699,7 @@ const Checkout = ({ setIsAppOnHomePage, cartItems }) => {
                               </div>
                               <div className="CheckoutV3_quantity__KoSHV">
                                 {" "}
-                                Quantity: 1{" "}
+                                Quantity: {item.orderedQuantity}
                               </div>
                             </div>
                             <div className="CheckoutV3_discounted__HoflW">
