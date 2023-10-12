@@ -213,7 +213,7 @@ const App = () => {
 
   const handleUpdateItemQuantity = (id, ItemQuantity) => {
     setCartItems((cartItems) => {
-      cartItems.map((item) =>
+      return cartItems.map((item) =>
         item.id === id ? { ...item, orderedQuantity: ItemQuantity } : item
       );
     });

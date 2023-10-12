@@ -165,17 +165,13 @@ const CartItem = ({ handleRemoveItem, item, handleUpdateItemQuantity }) => {
   const handleDecreaseQuant = (id) => {
     if (ItemQuantity === 1) return;
     setItemQuantity((quantity) => quantity - 1);
-    // setOrderItemQuant(id, ItemQuantity);
+    handleUpdateItemQuantity(id, ItemQuantity - 1);
   };
 
   const handleIncreaseQuant = (id) => {
     setItemQuantity((quantity) => quantity + 1);
-    // setOrderItemQuant(id, ItemQuantity);
+    handleUpdateItemQuantity(id, ItemQuantity + 1);
   };
-
-  // const setOrderItemQuant = (id, quantity) => {
-  //   handleUpdateItemQuantity(id, quantity);
-  // };
 
   return (
     <div data-test="cartRow" className="sc-hgkeyV jbOjdq" key={item.id}>
