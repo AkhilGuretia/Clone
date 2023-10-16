@@ -40,126 +40,146 @@ export const CartOverLay = ({
             </div>
           </div>
           <div> </div>
-          <div
-            className="cart-plix__info__container"
-            id="cart-plix-scrollable-area"
-          >
-            <div className="cart-plix__sectionHeader">Products Added:</div>
-            <div className="cart-plix__info">
-              <div className="popup_wrapper_box"></div>
-              <div className="sc-bGZrDQ KZpUv">
-                {cartItems.length > 0 &&
-                  cartItems.map((item) => (
-                    <CartItem
-                      key={item.id}
-                      item={item}
-                      handleRemoveItem={handleRemoveItem}
-                      handleDecreaseUpdateItemQuantity={
-                        handleDecreaseUpdateItemQuantity
-                      }
-                      handleIncreaseUpdateItemQuantity={
-                        handleIncreaseUpdateItemQuantity
-                      }
-                    />
-                  ))}
-              </div>
-            </div>
-            <hr className="sc-eXoFXb eaeJrc" />
+          {cartItems.length > 0 ? (
+            <>
+              <div
+                className="cart-plix__info__container"
+                id="cart-plix-scrollable-area"
+              >
+                <div className="cart-plix__sectionHeader">Products Added:</div>
+                <div className="cart-plix__info">
+                  <div className="popup_wrapper_box"></div>
+                  <div className="sc-bGZrDQ KZpUv">
+                    {cartItems.length > 0 &&
+                      cartItems.map((item) => (
+                        <CartItem
+                          key={item.id}
+                          item={item}
+                          handleRemoveItem={handleRemoveItem}
+                          handleDecreaseUpdateItemQuantity={
+                            handleDecreaseUpdateItemQuantity
+                          }
+                          handleIncreaseUpdateItemQuantity={
+                            handleIncreaseUpdateItemQuantity
+                          }
+                        />
+                      ))}
+                  </div>
+                </div>
+                <hr className="sc-eXoFXb eaeJrc" />
 
-            <div className="cart_footer">
-              <div className="sc-eMigcr kSuHr">
-                <div className="sc-fzsDOv itnVKs">Payment Summary:</div>
-                <div className="sc-gPWkxV kRHEZA">
-                  <div className="plixlife sc-itybZL ktvXNP">
-                    <div>MRP</div>
-                    <div>
-                      <span>₹{paymentSummary.mrp}</span>
+                <div className="cart_footer">
+                  <div className="sc-eMigcr kSuHr">
+                    <div className="sc-fzsDOv itnVKs">Payment Summary:</div>
+                    <div className="sc-gPWkxV kRHEZA">
+                      <div className="plixlife sc-itybZL ktvXNP">
+                        <div>MRP</div>
+                        <div>
+                          <span>₹{paymentSummary.mrp}</span>
+                        </div>
+                      </div>
+                      <div className="plixlife-itemDiscount sc-itybZL ktvXNP">
+                        <div>Item Discount</div>
+                        <div>
+                          <span>₹{paymentSummary.discount}</span>
+                        </div>
+                      </div>
+                      <div className="plixlife sc-itybZL ktvXNP">
+                        <div>Net Price</div>
+                        <div>
+                          <span>₹{paymentSummary.sPrice}</span>
+                        </div>
+                      </div>
+                      <div className="plixlife sc-itybZL ktvXNP">
+                        <div>Coupon Discount</div>
+                        <div>
+                          <span>₹0.00</span>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div className="plixlife-itemDiscount sc-itybZL ktvXNP">
-                    <div>Item Discount</div>
-                    <div>
-                      <span>₹{paymentSummary.discount}</span>
+                    <div className="sc-gPWkxV kRHEZA"> </div>
+                    <div className="sc-gPWkxV kRHEZA">
+                      <hr className="sc-jVODtj hvsSAu" />
                     </div>
-                  </div>
-                  <div className="plixlife sc-itybZL ktvXNP">
-                    <div>Net Price</div>
-                    <div>
-                      <span>₹{paymentSummary.sPrice}</span>
+                    <div className="sc-gPWkxV kRHEZA">
+                      <div className="plixlife-sub-total sc-itybZL ktvXNP">
+                        <div>Sub Total</div>
+                        <div>
+                          <span>₹{paymentSummary.sPrice}</span>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div className="plixlife sc-itybZL ktvXNP">
-                    <div>Coupon Discount</div>
-                    <div>
-                      <span>₹0.00</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="sc-gPWkxV kRHEZA"> </div>
-                <div className="sc-gPWkxV kRHEZA">
-                  <hr className="sc-jVODtj hvsSAu" />
-                </div>
-                <div className="sc-gPWkxV kRHEZA">
-                  <div className="plixlife-sub-total sc-itybZL ktvXNP">
-                    <div>Sub Total</div>
-                    <div>
-                      <span>₹{paymentSummary.sPrice}</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="sc-gPWkxV kRHEZA">
-                  <div className="plixlife-grand-total sc-itybZL ktvXNP">
-                    <div>Grand Total</div>
-                    <div>
-                      <span>₹{paymentSummary.sPrice}</span>
+                    <div className="sc-gPWkxV kRHEZA">
+                      <div className="plixlife-grand-total sc-itybZL ktvXNP">
+                        <div>Grand Total</div>
+                        <div>
+                          <span>₹{paymentSummary.sPrice}</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className="cart-plix__footer__wrapper">
-            <div className="cart-plix__footer">
-              <div className="cart-plix__footer__totalPrice">
-                <div>
-                  <span className="cart-plix__footer__totalPrice__key">
-                    Total
-                  </span>
-                  <span className="cart-plix__footer__totalPrice__value">
-                    <span data-test="totalPrice">₹{paymentSummary.sPrice}</span>
-                  </span>
-                </div>
-                <div className="free-shipping">
-                  <div className="Sticker truckicon_andtext">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="13"
-                      height="9"
-                      fill="none"
-                      viewBox="0 0 13 9"
+              <div className="cart-plix__footer__wrapper">
+                <div className="cart-plix__footer">
+                  <div className="cart-plix__footer__totalPrice">
+                    <div>
+                      <span className="cart-plix__footer__totalPrice__key">
+                        Total
+                      </span>
+                      <span className="cart-plix__footer__totalPrice__value">
+                        <span data-test="totalPrice">
+                          ₹{paymentSummary.sPrice}
+                        </span>
+                      </span>
+                    </div>
+                    <div className="free-shipping">
+                      <div className="Sticker truckicon_andtext">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="13"
+                          height="9"
+                          fill="none"
+                          viewBox="0 0 13 9"
+                        >
+                          <path
+                            fill="#1EAF6D"
+                            d="M1.16 0h8.113v2.125h1.738L12.75 4.25v2.656h-1.16c0 .423-.182.828-.508 1.127a1.822 1.822 0 01-1.23.467c-.46 0-.903-.168-1.23-.467a1.53 1.53 0 01-.508-1.127H4.636c0 .423-.183.828-.509 1.127a1.822 1.822 0 01-1.23.467c-.46 0-.903-.168-1.229-.467a1.53 1.53 0 01-.509-1.127H0V1.063C0 .473.522 0 1.16 0zm8.113 2.922V4.25h2.59l-1.141-1.328h-1.45zM2.898 6.109a.911.911 0 00-.615.234.765.765 0 00-.255.563c0 .212.092.414.255.564.163.15.384.233.615.233.23 0 .451-.084.614-.233a.765.765 0 00.255-.564.765.765 0 00-.255-.563.911.911 0 00-.614-.234zm6.954 0a.911.911 0 00-.614.234.765.765 0 00-.255.563c0 .212.092.414.255.564.163.15.384.233.614.233.23 0 .452-.084.615-.233a.765.765 0 00.255-.564.765.765 0 00-.255-.563.911.911 0 00-.615-.234zm-5.795-.796l3.477-3.188-.817-.754-2.66 2.438L2.846 2.7l-.818.754 2.029 1.86z"
+                          ></path>
+                        </svg>
+                        Free Shipping
+                      </div>
+                    </div>
+                  </div>
+                  <div className="cart-plix__footer__button">
+                    <NavLink
+                      to="/checkout"
+                      onClick={() => setIsAppOnHomePage(false)}
                     >
-                      <path
-                        fill="#1EAF6D"
-                        d="M1.16 0h8.113v2.125h1.738L12.75 4.25v2.656h-1.16c0 .423-.182.828-.508 1.127a1.822 1.822 0 01-1.23.467c-.46 0-.903-.168-1.23-.467a1.53 1.53 0 01-.508-1.127H4.636c0 .423-.183.828-.509 1.127a1.822 1.822 0 01-1.23.467c-.46 0-.903-.168-1.229-.467a1.53 1.53 0 01-.509-1.127H0V1.063C0 .473.522 0 1.16 0zm8.113 2.922V4.25h2.59l-1.141-1.328h-1.45zM2.898 6.109a.911.911 0 00-.615.234.765.765 0 00-.255.563c0 .212.092.414.255.564.163.15.384.233.615.233.23 0 .451-.084.614-.233a.765.765 0 00.255-.564.765.765 0 00-.255-.563.911.911 0 00-.614-.234zm6.954 0a.911.911 0 00-.614.234.765.765 0 00-.255.563c0 .212.092.414.255.564.163.15.384.233.614.233.23 0 .452-.084.615-.233a.765.765 0 00.255-.564.765.765 0 00-.255-.563.911.911 0 00-.615-.234zm-5.795-.796l3.477-3.188-.817-.754-2.66 2.438L2.846 2.7l-.818.754 2.029 1.86z"
-                      ></path>
-                    </svg>
-                    Free Shipping
+                      <button onClick={() => setShowCart(false)}>
+                        <span>Proceed to Pay</span>
+                      </button>
+                    </NavLink>
                   </div>
                 </div>
               </div>
-              <div className="cart-plix__footer__button">
-                <NavLink
-                  to="/checkout"
-                  onClick={() => setIsAppOnHomePage(false)}
-                >
-                  <button onClick={() => setShowCart(false)}>
-                    <span>Proceed to Pay</span>
-                  </button>
-                </NavLink>
-              </div>
+              <div className="cart-alert"></div>
+            </>
+          ) : (
+            <div className="cart-plix__empty">
+              <svg width="5rem" height="5rem" viewBox="0 0 94 104" fill="none">
+                <path
+                  d="M43.14 65.492a3.37 3.37 0 006.702-.692L48.29 49.766a3.369 3.369 0 10-6.702.693l1.553 15.033zM64.224 68.498a3.37 3.37 0 003.697-3.005l1.554-15.034a3.368 3.368 0 10-6.702-.693L61.219 64.8a3.369 3.369 0 003.005 3.698zM38.138 83.141c-5.75 0-10.428 4.678-10.428 10.429S32.388 104 38.138 104c5.75 0 10.429-4.679 10.429-10.43 0-5.75-4.679-10.429-10.429-10.429zm0 14.121a3.696 3.696 0 01-3.69-3.693 3.694 3.694 0 013.69-3.69 3.695 3.695 0 013.69 3.69 3.696 3.696 0 01-3.69 3.693zM72.925 83.141c-5.75 0-10.429 4.678-10.429 10.429S67.174 104 72.925 104c5.75 0 10.43-4.679 10.43-10.43 0-5.75-4.68-10.429-10.43-10.429zm0 14.121a3.696 3.696 0 01-3.69-3.693 3.695 3.695 0 013.69-3.69 3.695 3.695 0 013.691 3.69 3.696 3.696 0 01-3.691 3.693z"
+                  fill="#2B364B"
+                ></path>
+                <path
+                  d="M93.076 35.523a3.368 3.368 0 00-2.665-1.309H23.258l-2.82-10.844a3.37 3.37 0 00-3.261-2.52H3.369a3.369 3.369 0 000 6.737h11.203l2.797 10.757c.014.06.03.12.047.178l10.402 40a3.37 3.37 0 003.26 2.52h48.907a3.37 3.37 0 003.26-2.52L93.673 38.43a3.37 3.37 0 00-.596-2.908zM77.38 74.306H33.684L25.01 40.953h61.044L77.38 74.306zM42.305 23.74a3.36 3.36 0 002.382.987 3.369 3.369 0 002.382-5.752L36.473 8.385a3.37 3.37 0 00-4.763 4.765l10.595 10.59zM66.39 24.726a3.36 3.36 0 002.384-.988l10.58-10.589a3.369 3.369 0 10-4.767-4.762l-10.58 10.59a3.37 3.37 0 002.383 5.75zM55.535 21.701h.001a3.37 3.37 0 003.369-3.368l.004-14.963A3.37 3.37 0 0055.54 0h-.001a3.37 3.37 0 00-3.37 3.368l-.003 14.963a3.37 3.37 0 003.368 3.37z"
+                  fill="#2B364B"
+                ></path>
+              </svg>
+              <span>Your Shopping Cart is Empty!</span>
             </div>
-          </div>
-          <div className="cart-alert"></div>
+          )}
         </div>
       </div>
     </div>

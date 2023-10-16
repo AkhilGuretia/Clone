@@ -89,7 +89,7 @@ const TopNavigation = ({ handleShowCart, cartItemsLength }) => {
               <div className="input__content">
                 <input
                   className="input__field input__field--left-icon"
-                  value="search for products..."
+                  placeholder="Search for products..."
                 />
               </div>
             </div>
@@ -185,6 +185,7 @@ const TopNavigation = ({ handleShowCart, cartItemsLength }) => {
                   viewBox="0 0 25 25"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  style={{ position: "relative", top: "3px", left: "-10px" }}
                 >
                   <path
                     d="M12.4999 2.08203C6.74679 2.08203 2.08325 6.74557 2.08325 12.4987C2.08325 18.2518 6.74679 22.9154 12.4999 22.9154C18.253 22.9154 22.9166 18.2518 22.9166 12.4987C22.9166 6.74557 18.253 2.08203 12.4999 2.08203Z"
