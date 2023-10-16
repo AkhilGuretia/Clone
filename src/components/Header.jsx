@@ -1,12 +1,15 @@
 import { NavLink } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
-export const Header = ({ handleShowCart }) => {
+export const Header = ({ handleShowCart, cartItemsLength }) => {
   return (
     <header className="header-menu">
       <nav className="nav-menu" id="header">
         <div className="placeholder-nav-main">
-          <TopNavigation handleShowCart={handleShowCart} />
+          <TopNavigation
+            handleShowCart={handleShowCart}
+            cartItemsLength={cartItemsLength}
+          />
         </div>
 
         <BottomNavigation />
@@ -15,7 +18,7 @@ export const Header = ({ handleShowCart }) => {
   );
 };
 
-const TopNavigation = ({ handleShowCart }) => {
+const TopNavigation = ({ handleShowCart, cartItemsLength }) => {
   return (
     <>
       <div className="nav-menu-left">
@@ -168,7 +171,9 @@ const TopNavigation = ({ handleShowCart }) => {
                 strokeLinejoin="round"
               ></path>
             </svg>
-            <span className="plixlife-main-menu__cart__quantity">1</span>
+            <span className="plixlife-main-menu__cart__quantity">
+              {cartItemsLength}
+            </span>
           </li>
 
           <li>

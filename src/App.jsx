@@ -269,7 +269,11 @@ const App = () => {
   };
 
   const handleAddCartItem = (newItem) => {
-    setCartItems((cartItems) => [...cartItems, newItem]);
+    let approve = true;
+    cartItems.forEach((item) => {
+      if (item.id === newItem.id) approve = false;
+    });
+    approve && setCartItems((cartItems) => [...cartItems, newItem]);
   };
 
   const handleRemoveItem = (id) => {
@@ -311,7 +315,12 @@ const App = () => {
   return (
     <div>
       <div className="App">
-        {isAppOnHomePage && <Header handleShowCart={handleShowCart} />}
+        {isAppOnHomePage && (
+          <Header
+            handleShowCart={handleShowCart}
+            cartItemsLength={cartItems.length}
+          />
+        )}
 
         {showCart && (
           <CartOverLay
