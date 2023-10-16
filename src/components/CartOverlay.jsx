@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
@@ -9,36 +9,8 @@ export const CartOverLay = ({
   handleRemoveItem,
   handleDecreaseUpdateItemQuantity,
   handleIncreaseUpdateItemQuantity,
+  paymentSummary,
 }) => {
-  const [paymentSummary, setPaymentSummary] = useState({
-    mrp: 0,
-    sPrice: 0,
-    discount: 0,
-  });
-
-  const handlePaymentSummary = () => {
-    if (cartItems.length > 0) {
-      let mrp = 0;
-      let sPrice = 0;
-      let discount = 0;
-      cartItems.forEach((item) => {
-        mrp += item.originalBasePrice * item.orderedQuantity;
-        sPrice += item.specialBasePrice * item.orderedQuantity;
-        discount += item.itemDiscount * item.orderedQuantity;
-      });
-      setPaymentSummary({ mrp, sPrice, discount });
-    } else {
-      let mrp = 0;
-      let sPrice = 0;
-      let discount = 0;
-      setPaymentSummary({ mrp, sPrice, discount });
-    }
-  };
-
-  useEffect(() => {
-    handlePaymentSummary();
-  }, [cartItems]);
-
   return (
     <div className="overlayFarzicom overlayFarzicom--plixlifefcCart">
       <div className="overlayFarzicom__right">

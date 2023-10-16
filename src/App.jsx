@@ -5,7 +5,7 @@ import { Footer } from "./components/Footer.jsx";
 import Checkout from "./pages/Checkout.jsx";
 import { CartOverLay } from "./components/CartOverlay.jsx";
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const shopCategory = [
   {
@@ -235,6 +235,35 @@ const App = () => {
 
   const [cartItems, setCartItems] = useState([]);
 
+  const [paymentSummary, setPaymentSummary] = useState({
+    mrp: 0,
+    sPrice: 0,
+    discount: 0,
+  });
+
+  const handlePaymentSummary = () => {
+    if (cartItems.length > 0) {
+      let mrp = 0;
+      let sPrice = 0;
+      let discount = 0;
+      cartItems.forEach((item) => {
+        mrp += item.originalBasePrice * item.orderedQuantity;
+        sPrice += item.specialBasePrice * item.orderedQuantity;
+        discount += item.itemDiscount * item.orderedQuantity;
+      });
+      setPaymentSummary({ mrp, sPrice, discount });
+    } else {
+      let mrp = 0;
+      let sPrice = 0;
+      let discount = 0;
+      setPaymentSummary({ mrp, sPrice, discount });
+    }
+  };
+
+  useEffect(() => {
+    handlePaymentSummary();
+  }, [cartItems]);
+
   const handleShowCart = () => {
     setShowCart((status) => !status);
   };
@@ -292,6 +321,7 @@ const App = () => {
             handleRemoveItem={handleRemoveItem}
             handleDecreaseUpdateItemQuantity={handleDecreaseUpdateItemQuantity}
             handleIncreaseUpdateItemQuantity={handleIncreaseUpdateItemQuantity}
+            paymentSummary={paymentSummary}
           />
         )}
 
@@ -312,6 +342,7 @@ const App = () => {
               <Checkout
                 setIsAppOnHomePage={setIsAppOnHomePage}
                 cartItems={cartItems}
+                paymentSummary={paymentSummary}
               />
             }
           />

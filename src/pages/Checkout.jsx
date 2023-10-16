@@ -1,7 +1,7 @@
+/* eslint-disable react/prop-types */
 import { NavLink } from "react-router-dom";
 
-// eslint-disable-next-line react/prop-types
-const Checkout = ({ setIsAppOnHomePage, cartItems }) => {
+const Checkout = ({ setIsAppOnHomePage, cartItems, paymentSummary }) => {
   const checkoutItems = cartItems;
   return (
     <>
@@ -688,13 +688,13 @@ const Checkout = ({ setIsAppOnHomePage, cartItems }) => {
                               </div>
                               <div className="CheckoutV3_orderSummaryProductContentPriceContainer__03Dtf">
                                 <div className="CheckoutV3_undiscounted__2FNIK">
-                                  <span>{item.originalPrice}</span>
+                                  <span>₹{item.originalPrice}</span>
                                 </div>
                                 <div className="CheckoutV3_discounted__HoflW">
-                                  <span>{item.specialPrice}</span>
+                                  <span>₹{item.specialPrice}</span>
                                 </div>
                                 <div className="CheckoutV3_discount__iiyld">
-                                  {item.discount}
+                                  ₹{item.itemDiscount}
                                 </div>
                               </div>
                               <div className="CheckoutV3_quantity__KoSHV">
@@ -703,7 +703,7 @@ const Checkout = ({ setIsAppOnHomePage, cartItems }) => {
                               </div>
                             </div>
                             <div className="CheckoutV3_discounted__HoflW">
-                              <span>{item.specialPrice}</span>
+                              <span>₹{item.specialPrice}</span>
                             </div>
                           </div>
                         </div>
@@ -739,7 +739,7 @@ const Checkout = ({ setIsAppOnHomePage, cartItems }) => {
                     </div>
                     <div>
                       <div className="CheckoutV3_paymentSummaryRowBold__uferc">
-                        Grand Total <span>₹849.00</span>
+                        Grand Total <span>₹{paymentSummary.sPrice}</span>
                       </div>
                     </div>
                   </div>
