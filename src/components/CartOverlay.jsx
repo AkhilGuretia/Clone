@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
@@ -7,8 +7,38 @@ export const CartOverLay = ({
   setIsAppOnHomePage,
   cartItems,
   handleRemoveItem,
-  handleUpdateItemQuantity,
+  handleDecreaseUpdateItemQuantity,
+  handleIncreaseUpdateItemQuantity,
 }) => {
+  const [paymentSummary, setPaymentSummary] = useState({
+    mrp: 0,
+    sPrice: 0,
+    discount: 0,
+  });
+
+  const handlePaymentSummary = () => {
+    if (cartItems.length > 0) {
+      let mrp = 0;
+      let sPrice = 0;
+      let discount = 0;
+      cartItems.forEach((item) => {
+        mrp += item.originalBasePrice * item.orderedQuantity;
+        sPrice += item.specialBasePrice * item.orderedQuantity;
+        discount += item.itemDiscount * item.orderedQuantity;
+      });
+      setPaymentSummary({ mrp, sPrice, discount });
+    } else {
+      let mrp = 0;
+      let sPrice = 0;
+      let discount = 0;
+      setPaymentSummary({ mrp, sPrice, discount });
+    }
+  };
+
+  useEffect(() => {
+    handlePaymentSummary();
+  }, [cartItems]);
+
   return (
     <div className="overlayFarzicom overlayFarzicom--plixlifefcCart">
       <div className="overlayFarzicom__right">
@@ -46,13 +76,18 @@ export const CartOverLay = ({
             <div className="cart-plix__info">
               <div className="popup_wrapper_box"></div>
               <div className="sc-bGZrDQ KZpUv">
-                {cartItems?.length > 0 &&
-                  cartItems?.map((item) => (
+                {cartItems.length > 0 &&
+                  cartItems.map((item) => (
                     <CartItem
                       key={item.id}
                       item={item}
                       handleRemoveItem={handleRemoveItem}
-                      handleUpdateItemQuantity={handleUpdateItemQuantity}
+                      handleDecreaseUpdateItemQuantity={
+                        handleDecreaseUpdateItemQuantity
+                      }
+                      handleIncreaseUpdateItemQuantity={
+                        handleIncreaseUpdateItemQuantity
+                      }
                     />
                   ))}
               </div>
@@ -66,19 +101,19 @@ export const CartOverLay = ({
                   <div className="plixlife sc-itybZL ktvXNP">
                     <div>MRP</div>
                     <div>
-                      <span>₹1,400.00</span>
+                      <span>₹{paymentSummary.mrp}</span>
                     </div>
                   </div>
                   <div className="plixlife-itemDiscount sc-itybZL ktvXNP">
                     <div>Item Discount</div>
                     <div>
-                      <span>₹151.00</span>
+                      <span>₹{paymentSummary.discount}</span>
                     </div>
                   </div>
                   <div className="plixlife sc-itybZL ktvXNP">
                     <div>Net Price</div>
                     <div>
-                      <span>₹1,249.00</span>
+                      <span>₹{paymentSummary.sPrice}</span>
                     </div>
                   </div>
                   <div className="plixlife sc-itybZL ktvXNP">
@@ -96,7 +131,7 @@ export const CartOverLay = ({
                   <div className="plixlife-sub-total sc-itybZL ktvXNP">
                     <div>Sub Total</div>
                     <div>
-                      <span>₹1,249.00</span>
+                      <span>₹{paymentSummary.sPrice}</span>
                     </div>
                   </div>
                 </div>
@@ -104,7 +139,7 @@ export const CartOverLay = ({
                   <div className="plixlife-grand-total sc-itybZL ktvXNP">
                     <div>Grand Total</div>
                     <div>
-                      <span>₹1,249.00</span>
+                      <span>₹{paymentSummary.sPrice}</span>
                     </div>
                   </div>
                 </div>
@@ -119,7 +154,7 @@ export const CartOverLay = ({
                     Total
                   </span>
                   <span className="cart-plix__footer__totalPrice__value">
-                    <span data-test="totalPrice">₹1,249.00</span>
+                    <span data-test="totalPrice">₹{paymentSummary.sPrice}</span>
                   </span>
                 </div>
                 <div className="free-shipping">
@@ -159,18 +194,23 @@ export const CartOverLay = ({
   );
 };
 
-const CartItem = ({ handleRemoveItem, item, handleUpdateItemQuantity }) => {
+const CartItem = ({
+  handleRemoveItem,
+  item,
+  handleIncreaseUpdateItemQuantity,
+  handleDecreaseUpdateItemQuantity,
+}) => {
   const [ItemQuantity, setItemQuantity] = useState(1);
 
   const handleDecreaseQuant = (id) => {
     if (ItemQuantity === 1) return;
     setItemQuantity((quantity) => quantity - 1);
-    handleUpdateItemQuantity(id, ItemQuantity - 1);
+    handleDecreaseUpdateItemQuantity(id, ItemQuantity - 1);
   };
 
   const handleIncreaseQuant = (id) => {
     setItemQuantity((quantity) => quantity + 1);
-    handleUpdateItemQuantity(id, ItemQuantity + 1);
+    handleIncreaseUpdateItemQuantity(id, ItemQuantity + 1);
   };
 
   return (
@@ -227,7 +267,7 @@ const CartItem = ({ handleRemoveItem, item, handleUpdateItemQuantity }) => {
                 <input
                   name="quantity"
                   className="sc-ctDIWD klXQeF sc-bAeIUo fOjzft"
-                  value={ItemQuantity}
+                  value={item.orderedQuantity}
                 />
               </div>
               <span
@@ -253,10 +293,10 @@ const CartItem = ({ handleRemoveItem, item, handleUpdateItemQuantity }) => {
           <div>
             <div className="sc-cvbbAY cRuOWk">
               <span className="sc-kEYyzF JGMgo">
-                <span>{item.originalPrice}</span>
+                <span>₹{item.originalPrice}</span>
               </span>
               <div className="sc-brqgnP jCBOdm">
-                <span>{item.specialPrice}</span>
+                <span>₹{item.specialPrice}</span>
               </div>
             </div>
             <div className="sc-cMljjf bDaOyf">

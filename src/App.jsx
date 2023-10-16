@@ -20,9 +20,12 @@ const shopCategory = [
           "https://images.plixlife.com/hosted/Ultra_Vitality_Effervescent_aqualogica_image-ab82b152e2fd.png?auto=format&fit=max&w=1024",
         rating: 4.7,
         quantity: "Pack of 4 tubes",
-        originalPrice: "₹1,400",
-        specialPrice: "₹1,249",
+        originalBasePrice: 1400,
+        originalPrice: 1400,
+        specialBasePrice: 1246,
+        specialPrice: 1246,
         discount: "-11%",
+        itemDiscount: 154,
         orderedQuantity: 1,
       },
 
@@ -33,9 +36,12 @@ const shopCategory = [
           "https://images.plixlife.com/hosted/L-Carnitine_Acv_Effervescent_aqualogica_image-91711fc819e7.png?auto=format&fit=max&w=420",
         rating: 5.0,
         quantity: "Pack of 4 tubes",
-        originalPrice: "₹1,600",
-        specialPrice: "₹1,299",
+        originalBasePrice: 1600,
+        originalPrice: 1600,
+        specialBasePrice: 1296,
+        specialPrice: 1296,
         discount: "-19%",
+        itemDiscount: 304,
         orderedQuantity: 1,
       },
 
@@ -46,9 +52,12 @@ const shopCategory = [
           "https://images.plixlife.com/hosted/Ashwa-6895b63b605c.png?auto=format&fit=max&w=420",
         rating: 4.7,
         quantity: "Pack of 4 tubes",
-        originalPrice: "₹1,400",
-        specialPrice: "₹1,249",
+        originalPrice: 1400,
+        specialPrice: 1246,
+        originalBasePrice: 1400,
+        specialBasePrice: 1246,
         discount: "-11%",
+        itemDiscount: 154,
         orderedQuantity: 1,
       },
     ],
@@ -66,9 +75,12 @@ const shopCategory = [
           "https://images.plixlife.com/hosted/ACV-98916cba8f9f.png?auto=format&fit=max&w=420",
         rating: 4.8,
         quantity: "Pack of 4 tubes",
-        originalPrice: "₹1,400",
-        specialPrice: "₹1,249",
+        originalPrice: 1400,
+        specialPrice: 1246,
+        originalBasePrice: 1400,
+        specialBasePrice: 1246,
         discount: "-11%",
+        itemDiscount: 154,
         orderedQuantity: 1,
       },
 
@@ -79,9 +91,12 @@ const shopCategory = [
           "https://images.plixlife.com/hosted/ACV_Multipower_Effervescent-babcbdd36c8b.jpg?auto=format&fit=max&w=420",
         rating: 4.5,
         quantity: "Pack of 4 tubes",
-        originalPrice: "₹1,400",
-        specialPrice: "₹1,249",
+        originalPrice: 1400,
+        specialPrice: 1246,
+        originalBasePrice: 1400,
+        specialBasePrice: 1246,
         discount: "-11%",
+        itemDiscount: 154,
         orderedQuantity: 1,
       },
 
@@ -92,9 +107,12 @@ const shopCategory = [
           "https://images.plixlife.com/hosted/drink_sleep_burm-fad108166509.jpg?auto=format&fit=max&w=420",
         rating: 4.8,
         quantity: "Pack of 1 KG",
-        originalPrice: "₹2,499",
-        specialPrice: "₹1,800",
+        originalPrice: 2499,
+        specialPrice: 1800,
+        originalBasePrice: 2499,
+        specialBasePrice: 1800,
         discount: "-28%",
+        itemDiscount: 699,
         orderedQuantity: 1,
       },
     ],
@@ -112,9 +130,12 @@ const shopCategory = [
           "https://images.plixlife.com/hosted/Hair_Growth_Serum_aqualogica_image-0306652cdc3b.png?auto=format&fit=max&w=420",
         rating: 4.8,
         quantity: "Pack of 1",
-        originalPrice: "₹1,199",
-        specialPrice: "₹899",
+        originalPrice: 1199,
+        specialPrice: 888,
+        originalBasePrice: 1199,
+        specialBasePrice: 888,
         discount: "-26%",
+        itemDiscount: 311,
         orderedQuantity: 1,
       },
 
@@ -125,9 +146,12 @@ const shopCategory = [
           "https://images.plixlife.com/hosted/Flaunt_your_Hair_-b87d062b20e0.jpg?auto=format&fit=max&w=420",
         rating: 4.8,
         quantity: "Pack of 4 tubes",
-        originalPrice: "₹1,400",
-        specialPrice: "₹1,249",
+        originalPrice: 1400,
+        specialPrice: 1246,
+        originalBasePrice: 1400,
+        specialBasePrice: 1246,
         discount: "-11%",
+        itemDiscount: 154,
         orderedQuantity: 1,
       },
 
@@ -138,9 +162,12 @@ const shopCategory = [
           "https://images.plixlife.com/hosted/Healthier_Hair_Gummies_aqualogica_image-9ec8b53fc2b5.png?auto=format&fit=max&w=420",
         rating: 4.8,
         quantity: "Pack of 1 ",
-        originalPrice: "₹999",
-        specialPrice: "₹699",
+        originalPrice: 999,
+        specialPrice: 720,
+        originalBasePrice: 999,
+        specialBasePrice: 720,
         discount: "-28%",
+        itemDiscount: 279,
         orderedQuantity: 1,
       },
     ],
@@ -158,9 +185,12 @@ const shopCategory = [
           "https://images.plixlife.com/hosted/Gluta-902e447a093e.png?auto=format&fit=max&w=420",
         rating: 4.7,
         quantity: "Pack of 1 Tube",
-        originalPrice: "₹850",
-        specialPrice: "₹849",
+        originalPrice: 850,
+        specialPrice: 849,
+        originalBasePrice: 850,
+        specialBasePrice: 849,
         discount: "-1%",
+        itemDiscount: 1,
         orderedQuantity: 1,
       },
 
@@ -171,9 +201,12 @@ const shopCategory = [
           "https://images.plixlife.com/hosted/Jamun_Acne_Marks-816b5f357f7c.png?auto=format&fit=max&w=420",
         rating: 4.6,
         quantity: "Pack of 1",
-        originalPrice: "₹575",
-        specialPrice: "₹549",
+        originalPrice: 575,
+        specialPrice: 547,
+        originalBasePrice: 575,
+        specialBasePrice: 547,
         discount: "-5%",
+        itemDiscount: 28,
         orderedQuantity: 1,
       },
 
@@ -184,9 +217,12 @@ const shopCategory = [
           "https://images.plixlife.com/hosted/Pineapple_Serum__Facewash-c8a467012c39.png?auto=format&fit=max&w=420",
         rating: 4.6,
         quantity: "Pack of 1 ",
-        originalPrice: "₹1075",
-        specialPrice: "₹699",
+        originalPrice: 1075,
+        specialPrice: 699,
+        originalBasePrice: 1075,
+        specialBasePrice: 699,
         discount: "-35%",
+        itemDiscount: 376,
         orderedQuantity: 1,
       },
     ],
@@ -211,11 +247,35 @@ const App = () => {
     setCartItems((cartItems) => cartItems.filter((item) => item.id !== id));
   };
 
-  const handleUpdateItemQuantity = (id, ItemQuantity) => {
+  const handleIncreaseUpdateItemQuantity = (id, ItemQuantity) => {
     setCartItems((cartItems) => {
-      return cartItems.map((item) =>
-        item.id === id ? { ...item, orderedQuantity: ItemQuantity } : item
-      );
+      return cartItems.map((item) => {
+        const newOgPrice = item.originalBasePrice * ItemQuantity;
+        const newSprice = item.specialBasePrice * ItemQuantity;
+        return item.id === id
+          ? {
+              ...item,
+              orderedQuantity: ItemQuantity,
+              originalPrice: newOgPrice,
+              specialPrice: newSprice,
+            }
+          : item;
+      });
+    });
+  };
+
+  const handleDecreaseUpdateItemQuantity = (id, ItemQuantity) => {
+    setCartItems((cartItems) => {
+      return cartItems.map((item) => {
+        return item.id === id
+          ? {
+              ...item,
+              orderedQuantity: ItemQuantity,
+              originalPrice: item.originalBasePrice * ItemQuantity,
+              specialPrice: item.specialBasePrice * ItemQuantity,
+            }
+          : item;
+      });
     });
   };
 
@@ -230,7 +290,8 @@ const App = () => {
             setIsAppOnHomePage={setIsAppOnHomePage}
             cartItems={cartItems}
             handleRemoveItem={handleRemoveItem}
-            handleUpdateItemQuantity={handleUpdateItemQuantity}
+            handleDecreaseUpdateItemQuantity={handleDecreaseUpdateItemQuantity}
+            handleIncreaseUpdateItemQuantity={handleIncreaseUpdateItemQuantity}
           />
         )}
 
