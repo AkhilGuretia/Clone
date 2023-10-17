@@ -1,8 +1,15 @@
 /* eslint-disable react/prop-types */
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 const Checkout = ({ setIsAppOnHomePage, cartItems, paymentSummary }) => {
   const checkoutItems = cartItems;
+  const [showPaymentSummary, setShowPaymentSummary] = useState(false);
+
+  const handleShowPaymentSummary = () => {
+    setShowPaymentSummary((show) => !show);
+  };
+
   return (
     <>
       <header className="headerNav false headerNavPlix">
@@ -643,25 +650,6 @@ const Checkout = ({ setIsAppOnHomePage, cartItems, paymentSummary }) => {
                     <div className="CheckoutV3_orderSummary__2IAQr">
                       Order Summary
                     </div>
-                    <div>
-                      <div className="CheckoutV3_showMoreContainer__TWOur">
-                        <span className="CheckoutV3_showMoreContainerText__sZXDq">
-                          Show More
-                        </span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="12"
-                          height="12"
-                          fill="none"
-                          viewBox="0 0 12 12"
-                        >
-                          <path
-                            fill="#5DD37C"
-                            d="M11.813 5.75c0 .492-.41.902-.876.902H7v3.938c0 .465-.41.848-.875.848a.858.858 0 01-.875-.848V6.652H1.312c-.492 0-.875-.41-.875-.902 0-.465.383-.848.875-.848H5.25V.965c0-.492.383-.902.875-.902.465 0 .875.41.875.902v3.937h3.938c.464-.027.874.383.874.848z"
-                          ></path>
-                        </svg>
-                      </div>
-                    </div>
                   </div>
                   <div className="CheckoutV3_showHrdesktop__hs_Vr">
                     <hr className="CheckoutV3_hr__lAMl4 " />
@@ -717,7 +705,7 @@ const Checkout = ({ setIsAppOnHomePage, cartItems, paymentSummary }) => {
                       <div className="CheckoutV3_paymentSummaryHeaderText__VWFFn">
                         Payment Summary{" "}
                       </div>
-                      <div>
+                      <div onClick={handleShowPaymentSummary}>
                         <div className="CheckoutV3_showMoreContainer__TWOur">
                           <span className="CheckoutV3_showMoreContainerText__sZXDq">
                             Show More
@@ -737,6 +725,47 @@ const Checkout = ({ setIsAppOnHomePage, cartItems, paymentSummary }) => {
                         </div>
                       </div>
                     </div>
+
+                    {showPaymentSummary && (
+                      <>
+                        <div className="CheckoutV3_paymentSummaryContainer__F7y09">
+                          <div className="CheckoutV3_row__B8iYl">
+                            <div className="CheckoutV3_paymentSummaryRow__Nx2hL">
+                              MRP
+                              <span>
+                                <span> ₹ {paymentSummary.mrp}</span>
+                              </span>
+                            </div>
+                          </div>
+                          <div className="CheckoutV3_row__B8iYl">
+                            <div className="CheckoutV3_paymentSummaryRow__Nx2hL">
+                              Item Discount
+                              <span>
+                                {" "}
+                                - <span> ₹ {paymentSummary.discount}</span>
+                              </span>
+                            </div>
+                          </div>
+                          <div className="CheckoutV3_row__B8iYl">
+                            <div className="CheckoutV3_paymentSummaryRow__Nx2hL">
+                              Net Price
+                              <span>
+                                <span> ₹ {paymentSummary.sPrice}</span>
+                              </span>
+                            </div>
+                          </div>
+                          <div className="CheckoutV3_row__B8iYl">
+                            <div className="CheckoutV3_paymentSummaryRow__Nx2hL">
+                              Sub Total
+                              <span>
+                                <span> ₹ {paymentSummary.sPrice}</span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </>
+                    )}
+
                     <div>
                       <div className="CheckoutV3_paymentSummaryRowBold__uferc">
                         Grand Total <span>₹{paymentSummary.sPrice}</span>

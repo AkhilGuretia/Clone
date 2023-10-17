@@ -3898,6 +3898,38 @@ option {
   margin-top: 1rem;
 }
 
+.CheckoutV3_paymentSummaryRow__Nx2hL {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 12px;
+  font-family: CocoSharp XL !important;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+  color: gray;
+  width: 100%;
+}
+
+.CheckoutV3_hr__lAMl4 {
+  border: none;
+  border-bottom: 1px solid #e5e5e5;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.CheckoutV3_paymentSummaryContainer__F7y09 .CheckoutV3_block2__F_DY0,
+.CheckoutV3_paymentSummaryContainer__F7y09 .CheckoutV3_row__B8iYl:nth-child(2) div,
+.CheckoutV3_paymentSummaryContainer__F7y09>div:nth-child(2) .CheckoutV3_block2__F_DY0 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 160%;
+  color: #5dd37c;
+}
+
 .CheckoutV3_paymentSummaryHeader__oXXKi {
   display: -ms-flexbox;
   display: flex;

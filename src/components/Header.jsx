@@ -171,9 +171,13 @@ const TopNavigation = ({ handleShowCart, cartItemsLength }) => {
                 strokeLinejoin="round"
               ></path>
             </svg>
-            <span className="plixlife-main-menu__cart__quantity">
-              {cartItemsLength}
-            </span>
+            {cartItemsLength > 0 ? (
+              <span className="plixlife-main-menu__cart__quantity">
+                {cartItemsLength}
+              </span>
+            ) : (
+              ""
+            )}
           </li>
 
           <li>

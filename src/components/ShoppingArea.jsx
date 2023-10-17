@@ -137,10 +137,10 @@ const ProductsContainer = ({ category, handleAddCartItem }) => {
                     <div>
                       <div className="sc-cvbbAY cRuOWk">
                         <span className="sc-kEYyzF JGMgo">
-                          <span>{product.originalPrice}</span>
+                          <span>₹{product.originalPrice}</span>
                         </span>
                         <div className="sc-brqgnP jCBOdm">
-                          <span>{product.specialPrice}</span>
+                          <span>₹ {product.specialPrice}</span>
                         </div>
                       </div>
                     </div>

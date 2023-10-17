@@ -312,9 +312,13 @@ const App = () => {
     });
   };
 
+  const appStyles = {
+    position: "fixed",
+  };
+
   return (
     <div>
-      <div className="App">
+      <div className="App" style={showCart ? appStyles : {}}>
         {isAppOnHomePage && (
           <Header
             handleShowCart={handleShowCart}
