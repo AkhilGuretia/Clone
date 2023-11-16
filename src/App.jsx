@@ -241,26 +241,25 @@ const App = () => {
     discount: 0,
   });
 
-  const handlePaymentSummary = () => {
-    if (cartItems.length > 0) {
-      let mrp = 0;
-      let sPrice = 0;
-      let discount = 0;
-      cartItems.forEach((item) => {
-        mrp += item.originalBasePrice * item.orderedQuantity;
-        sPrice += item.specialBasePrice * item.orderedQuantity;
-        discount += item.itemDiscount * item.orderedQuantity;
-      });
-      setPaymentSummary({ mrp, sPrice, discount });
-    } else {
-      let mrp = 0;
-      let sPrice = 0;
-      let discount = 0;
-      setPaymentSummary({ mrp, sPrice, discount });
-    }
-  };
-
   useEffect(() => {
+    const handlePaymentSummary = () => {
+      if (cartItems.length > 0) {
+        let mrp = 0;
+        let sPrice = 0;
+        let discount = 0;
+        cartItems.forEach((item) => {
+          mrp += item.originalBasePrice * item.orderedQuantity;
+          sPrice += item.specialBasePrice * item.orderedQuantity;
+          discount += item.itemDiscount * item.orderedQuantity;
+        });
+        setPaymentSummary({ mrp, sPrice, discount });
+      } else {
+        let mrp = 0;
+        let sPrice = 0;
+        let discount = 0;
+        setPaymentSummary({ mrp, sPrice, discount });
+      }
+    };
     handlePaymentSummary();
   }, [cartItems]);
 
