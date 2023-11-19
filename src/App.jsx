@@ -242,6 +242,12 @@ const App = () => {
   });
 
   useEffect(() => {
+    if (!isAppOnHomePage) document.title = "Checkout Page";
+
+    return () => (document.title = "Plixlife");
+  }, [isAppOnHomePage]);
+
+  useEffect(() => {
     const handlePaymentSummary = () => {
       if (cartItems.length > 0) {
         let mrp = 0;
